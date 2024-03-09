@@ -11,6 +11,24 @@ public class CharComparison {
      * @return -1 if A is less than B, 1 if A is greater than B, and 0 if the two arrays are identical.
      */
     public int compare(char[] a, char[] b){
-        return 0;
+
+        // just loosely calculate the dictionary position of each array and return the max value
+        int dictionaryPositionA = 0;
+        int dictionaryPositionB = 0;
+
+        for (int i = 0; i < a.length; i++) {
+            dictionaryPositionA += a[i];
+        }
+        for (int i = 0; i < b.length; i++) {
+            dictionaryPositionB += b[i];
+        }
+        if (dictionaryPositionA < dictionaryPositionB) {
+            return -1;
+        } else if (dictionaryPositionA > dictionaryPositionB) {
+            return 1;
+        } else { //dictionaryPositionA == dictionaryPositionB
+            return 0;
+        }
+
     }
 }
